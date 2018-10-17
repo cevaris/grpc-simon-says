@@ -4,7 +4,7 @@ resources:
   properties:
     zone: us-central1-f
     cluster:
-      name: simon-says
+      name: simon-says-server
       description: Server for the Internet Simon Says game!
       initialNodeCount: 3
       nodeConfig:
@@ -12,4 +12,4 @@ resources:
           - https://www.googleapis.com/auth/devstorage.read_only
       masterAuth:
         username: admin
-        password: supersecret
+        password: ecuastercesrepus

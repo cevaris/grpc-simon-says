@@ -33,7 +33,8 @@ mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_path := $(dir $(mkfile_path))
 src_path = $(current_path)/src
 
-export_go_path=export GOPATH=$(current_path)/vendor:$(current_path)
+#export_go_path=export GOPATH=$(current_path)/vendor:$(current_path)
+export_go_path=export GOPATH=$(current_path):/go
 
 #   _____                    _
 #  |_   _|_ _ _ __ __ _  ___| |_ ___
@@ -65,7 +66,7 @@ clean: clean-server
 
 # push to gcr.io
 push:
-	gcloud docker push $(TAG)
+	docker push $(TAG)
 
 # pull from gcr.io
 pull:

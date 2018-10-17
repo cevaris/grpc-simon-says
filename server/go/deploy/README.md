@@ -1,6 +1,6 @@
 # Deploying to the Kubernetes Cluster
 
-Deploying containersa to the Kubernetes cluster
+Deploying containers to the Kubernetes cluster
 
 ## Deploying Redis
 
