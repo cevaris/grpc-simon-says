@@ -27,7 +27,7 @@
 PROJECT?=$(shell gcloud config list project | awk 'FNR ==2 { print $$3 }')
 TAG=gcr.io/$(PROJECT)/server-dev
 NAME=simon-says-server-shell
-DOCKER_GID=$(word 3,$(subst :, ,$(shell getent group docker)))
+#DOCKER_GID=$(word 3,$(subst :, ,$(shell getent group docker)))
 PORT=7080
 
 #Directory that this Makefile is in.
@@ -74,7 +74,7 @@ shell:
 		-v ~/.appcfg_oauth2_tokens:/home/$(USER)/.appcfg_oauth2_tokens \
 		-v $(project_path)/.kube:/home/$(USER)/.kube \
 		-v $(project_path)/dev/zshrc:/home/$(USER)/.zshrc \
-		-v /usr/bin/docker:/usr/bin/docker \
+		-v /usr/local/bin/docker:/usr/local/bin/docker \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v $(project_path):/home/$(USER)/server \
 		-w /home/$(USER)/server \

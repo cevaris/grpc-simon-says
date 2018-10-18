@@ -49,12 +49,12 @@ RUN git clone https://github.com/robbyrussell/oh-my-zsh.git
 
 #tools for working with go.
 RUN go get github.com/constabulary/gb/...
-RUN go get github.com/golang/lint/golint
+RUN go get -u -v golang.org/x/lint/golint
 RUN go get golang.org/x/tools/cmd/goimports
 RUN go get -u github.com/kisielk/errcheck
 
 #This is for protobuf
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
+#RUN go get -u github.com/golang/protobuf/protoc-gen-go
 
 WORKDIR /root
 
